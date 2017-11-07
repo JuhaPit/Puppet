@@ -16,7 +16,7 @@ cd git
 git clone https://github.com/JuhaPit/Puppet.git
 
 echo "---Replacing Puppet's default content in /etc/puppet with content from repository---"
-sudo cp -TRv ./Puppet /etc/puppet
+sudo cp -TRv ./Puppet/puppet /etc/puppet
 
 echo "---Running Puppet's site.pp, installing SSH daemon---"
 sudo puppet apply /etc/puppet/manifests/site.pp
