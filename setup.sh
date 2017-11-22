@@ -21,5 +21,9 @@ git clone https://github.com/JuhaPit/Puppet.git
 echo "---Replacing Puppet's default content in /etc/puppet with content from repository---"
 sudo cp -TRv ./Puppet/puppet /etc/puppet
 
-echo "---Running Puppet's site.pp, installing SSH daemon---"
+echo "---Saving picture for Terminal background---"
+
+sudo cp ./Puppet/JTerminalTausta.jpg /home/$(whoami)/Downloads
+
+echo "---Running Puppet's site.pp, installing SSH daemon, set Terminal and VLC settings---"
 sudo puppet apply /etc/puppet/manifests/site.pp

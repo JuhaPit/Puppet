@@ -1,1 +1,2 @@
 include ssh
+include desktop
