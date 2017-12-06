@@ -7,7 +7,7 @@ echo "---Updating package repositories---"
 sudo apt-get update
 
 echo "---Installing Git and Puppet---"
-sudo apt-get install -y git puppet
+sudo apt-get install -y git puppet curl
 
 echo "---Fetch latest Node.js deb---"
 curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash -
