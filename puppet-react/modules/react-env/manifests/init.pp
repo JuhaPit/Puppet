@@ -2,7 +2,6 @@ class react-env {
 	$project_path = "/tmp/hello-react"
 	File { owner => '0', group => '0', mode => '0644', }
 	Package { ensure => 'installed', allowcdrom => true, }
-	Service { ensure => 'running', enable => true, }
 	Exec {cwd => $project_path, }
 
 	package { 'build-essential':}
