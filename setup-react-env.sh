@@ -9,6 +9,10 @@ sudo apt-get update
 echo "---Installing Git and Puppet---"
 sudo apt-get install -y git puppet
 
+echo "---Fetch latest Node.js deb---"
+curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash -
+sudo apt-get install -y nodejs
+
 echo "---Creating folders, pulling repository---"
 cd /home/$(whoami)
 mkdir -p git

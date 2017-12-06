@@ -6,13 +6,6 @@ class react-env {
 
 	package { 'build-essential':}
 
-	exec { 'latestnode':
-		command => 'curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash -',
-		path => ['/bin', '/usr/bin'],
-	}
-
-	package { 'nodejs':}
-
 	file { $project_path:
 		ensure => 'directory',
 	}
