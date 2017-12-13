@@ -14,14 +14,30 @@ Below you'll find instructions for manual and automatic setup.
 
 ### 1.1 Manual setup
 
-Open Terminal and run these commands in order:
+* Install Git, Puppet and Curl through apt-get
+* Add latest Node.js repository to package manager
+	* Mandatory, as the version of Node provided through apt-get at the time
+	of writing doesn't support the Node modules used in this installation
+	* Command for this is `curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash -`
+* Create a directory for Git project
+* Pull this Puppet project to the directory
+	* Inside directory, type `git clone https://github.com/JuhaPit/Puppet.git`
+* Replace Puppet's default content in **/etc/puppet/** with files from the Git repository's **puppet-react**
+ directory.
+	* Inside the directory you created earlier, type `sudo cp -TRv ./Puppet/puppet-react /etc/puppet` 
+	This will overwrite all default content.
+	* In the likely case you already have your own data saved in **/etc/puppet/**, just move the files 
+	found under **puppet-react**  directory's **modules** folder and modify your site.pp manifest
+	accordingly. Note that the module relies on `ordering=manifest` setting in puppet.conf. Be sure to 
+	add it if you decide to "cherry-pick" files from the module.
 
-* sudo apt-get update
-	* Updates package repositories
-* sudo apt-get install -y git puppet curl
-	* Installs these mandatory packages
-* curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash -
-	* Adds the latest Node.js repository to package manager. Necessary step, as the Node
-	version provided by apt-get at the time of writing doesn't support Node modules used in this
-	installation
-* 
+That's it, you're done!
+
+### 1.2 Automatic setup
+
+* Automatic setup does all the same steps as described in heading 1.1
+* Directory where this Git project is cloned, "git", is created in user's home directory.
+* All default content in **/etc/puppet/** is overwritten. You've been warned.
+
+To run automatic setup, just type `wget -O - https://raw.githubusercontent.com/JuhaPit/Puppet/master/setup-react-env.sh | bash` 
+to your Terminal.
