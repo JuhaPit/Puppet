@@ -1,17 +1,10 @@
 #!/bin/bash
 
-echo "---Setting keyboard to Finnish layout---"
-setxkbmap fi
-
-echo "---Updating package repositories---"
-sudo apt-get update
+echo "---Add latest Node.js repository to package manager---"
+curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash -
 
 echo "---Installing Git and Puppet---"
 sudo apt-get install -y git puppet
-
-echo "---Fetch latest Node.js deb---"
-curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash -
-sudo apt-get install -y nodejs
 
 echo "---Creating folders, pulling repository---"
 cd /home/$(whoami)
@@ -21,9 +14,3 @@ git clone https://github.com/JuhaPit/Puppet.git
 
 echo "---Replacing Puppet's default content in /etc/puppet with content from repository---"
 sudo cp -TRv ./Puppet/puppet-react /etc/puppet
-
-echo "---Running Puppet's site.pp, installing React.js environment---"
-sudo puppet apply /etc/puppet/manifests/site.pp
-
-echo "---Move files to user's home directory---"
-cp -r /tmp/hello-react/ /home/$(whoami)/
