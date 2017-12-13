@@ -4,7 +4,7 @@ echo "---Add latest Node.js repository to package manager---"
 curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash -
 
 echo "---Installing Git and Puppet---"
-sudo apt-get install -y git puppet
+sudo apt-get install -y git puppet curl
 
 echo "---Creating folders, pulling repository---"
 cd /home/$(whoami)
