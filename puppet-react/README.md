@@ -101,6 +101,12 @@ To start the app in localhost, navigate to hello-react/src/server and type `node
 
 Enjoy!
 
+## Sources
+
+I've used this installation guide many times in the past when installing this environment manually.
+It was also used as reference when creating this module.
+
+[Setting Up a React.js Environment Using Npm, Babel 6 and Webpack](https://www.codementor.io/tamizhvendan/beginner-guide-setup-reactjs-environment-npm-babel-6-webpack-du107r9zr)
 
 
 
