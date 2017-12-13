@@ -69,7 +69,7 @@ class react-env {
         }
 
 	exec { 'Webpack Bundle':
-                command => "$project_path/node_modules/.bin/webpack -d --watch",
+                command => "$project_path/node_modules/.bin/webpack -d",
                 path => $exec_path,
 		creates => "$project_path/src/client/public/bundle.js",
         }
